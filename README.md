@@ -1,16 +1,25 @@
-# AWS-security-monitoring
-Tracking and detecting for unauthorized/failed login attempts
+AWS Threat detection lab
+A cloud security monotiring lab created in AWS to detect unauthorized login attemps, IAM privalage escalation, and root account compromise with email alerts.
 
-I created an AWS tracking and detection system that sent notifications when a login attempt was attempted
+Overview
+This project simulates a security operations monitoring setup using native AWS services. CloudTrail captures all account activity, CloudWatch evaluates logs against threat detection rules, and SNS delivers immediate alerts when suspicious behavior is detected. Attack scenarios were simulated to validate detection across critical and high severity findings.
 
-I used a few aws services in order to achieve this.
+I inplemented the following:
 
-Cloutrail, I created a trail in cloudtrail specifically to track any security violation such as failed login attempts and security risks
+CloudTrail to record every API call, login attempt, and configuration changes made in the AWS account, This is essential because without CloudTrail there would be no detection alerts possible.
 
-Cloudwatch, I created 3 alarms that would send notification to root user.
-    1. Failed login attempts 
-    2.IAM policy changes
-    3.Root account usage
+CloudWatch's purpose is to read those logs and if they matches a detection rule such as the threashold of 3 failed logins it would trigger an alarm
 
-Cloudtrail simply keeps track of the login attempts while cloudwatch will send a notification to user that something is wrong, IAM policy changes is meant to track is someone is attempting to escalate their privelages when they might not be allowed to, And Root account changes are for when anything changes in the root account this could mean the root account was compromised requiring immediate action.
+GuardDuty works alongside this setup to provide machine based threat dection learning, it would flag findings such as EC2 compromise and S3 data exposure attempts that normal rule based alarms would miss.
 
+AWS config enforces compliance rules across the enviroments to ensure resources stay within defined security baselines
+
+I simulated attack scenarios such as:
+-Failed console logins attempts that trigger brute force detection
+-IAM policy modification to simulate privilege escalation attempts
+-EC2 compromise simulation validated against GuardDuty findings
+-S3 data exposure attempt validated against GuardDuty findings
+
+Under the screenshots tab you can find the screenshots of verified proof of simulations and brute force attack attempts.
+
+My next lab will consists of recieving real world brute force attacks in order to triange an alert.
