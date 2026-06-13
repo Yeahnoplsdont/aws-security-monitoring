@@ -34,9 +34,29 @@ CloudTrail metric filter detects unauthorized or unexpected IAM policy escalatio
 
 Proof of Detection
 Screenshots of alerts can be found in the /Screenshots folder of these events:
--CloudWatch FailedConsoleLogins alarm
--SNS email alert notification confirming a real-time alert pipeline
--GuardDuty findings for EC2 and S3 simulations
+### SNS Email Alert — Failed Console Logins
+![SNS Email Alert](Screenshots/IMG_1051.jpeg)
+
+### CloudTrail Logging Configuration
+![CloudTrail Logging](Screenshots/IMG_1052.jpeg)
+
+### GuardDuty Simulated Findings
+![GuardDuty Findings](Screenshots/IMG_1053.jpeg)
+
+### GuardDuty Threat Summary
+![Threat Summary](Screenshots/IMG_1054.jpeg)
+
+### CloudWatch Alarm History — Failed Logins and IAM Policy Changes
+![CloudWatch Alarm Graph](Screenshots/IMG_1055.jpeg)
+
+### IAM Policy Rule Configuration
+![IAM Policy Rule](Screenshots/IMG_1056.jpeg)
+
+### Password Policy Rules
+![Password Policy](Screenshots/IMG_1058.jpeg)
+
+### SNS Security Alerts Topic
+![SNS Topics](Screenshots/IMG_1060.jpeg)
 
 Learning experience-
 What I learned most about building this lab was the core workflow of cloud security operations. how logs flow from activity to detection to alerting in a real AWS environment. It also taught me the difference between rule-based detection and behavioral detection and how they work alongside each other to catch what the other service may have missed.
