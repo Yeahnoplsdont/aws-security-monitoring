@@ -33,7 +33,6 @@ IAM Policy Changes-
 CloudTrail metric filter detects unauthorized or unexpected IAM policy escalation attempts.
 
 Proof of Detection
-Screenshots of alerts can be found in the /Screenshots folder of these events:
 ### SNS Email Alert — Failed Console Logins
 ![SNS Email Alert](Screenshots/IMG_1051.jpeg)
 
